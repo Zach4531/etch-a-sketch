@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+  border: 10px solid #1855b1;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
