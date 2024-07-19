@@ -13,8 +13,12 @@ function createSquare() {
   const square = document.createElement('div');
   square.style.width = `${size}px`;
   square.style.height = `${size}px`;
-  square.style.backgroundColor = '#000';
+  square.style.backgroundColor = '#fff';
   square.classList.add('square');
+
+  square.addEventListener('mouseenter', (event) => {
+    event.currentTarget.classList.add('active');
+  });
 
   container.appendChild(square);
 }

@@ -6,8 +6,6 @@
   border: 10px solid #1855b1;
 }
 
-.square {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.square.active {
+  background-color: #000 !important;
 }
