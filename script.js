@@ -4,8 +4,15 @@ const width = 600;
 let grid = 16;
 
 changeGridButton.addEventListener('click', (e) => {
-  grid = prompt('Pick number between 1 and 100');
-  setGrid();
+  while (true) {
+    grid = prompt('Pick a number between 1 and 100');
+    if (parseInt(grid) > 0 && parseInt(grid) <= 100) {
+      grid = grid;
+      setGrid();
+      return false;
+    }
+    console.log('Number needs to be between 1 and 100');
+  }
 });
 
 function createSquare() {
