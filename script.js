@@ -20,11 +20,20 @@ function createSquare() {
   const square = document.createElement('div');
   square.style.width = `${size}px`;
   square.style.height = `${size}px`;
-  square.style.backgroundColor = '#fff';
   square.classList.add('square');
+  square.dataset.count = 0;
+  square.style.backgroundColor = setRGB();
+  square.style.opacity = 0;
 
   square.addEventListener('mouseenter', (event) => {
-    event.currentTarget.classList.add('active');
+    let element = event.currentTarget;
+    if (element.dataset.count < 11) {
+      element.dataset.count++;
+      element.style.opacity = `${element.dataset.count * 10}%`;
+      return;
+    }
+
+    // element.style.backgroundColor = setRGB();
   });
 
   container.appendChild(square);
@@ -37,4 +46,10 @@ function setGrid() {
   }
 }
 
+function setRGB() {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`;
+}
 setGrid(grid);
